@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود - GStream</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .mode-badge {
+            display: inline-block;
+            background: #00b894;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🎬 GStream <span class="mode-badge">🔋 بدون سرور</span></div>
+            <nav>
+                <a href="index.html">خانه</a>
+                <a href="upload.html">آپلود</a>
+                <a href="login.html" class="active">ورود</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h2>🔐 ورود به GStream</h2>
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">ایمیل</label>
+                        <input type="email" id="loginEmail" required placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">رمز عبور</label>
+                        <input type="password" id="loginPassword" required placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">ورود</button>
+                </form>
+                <p style="text-align:center; margin-top:15px; color:#888; font-size:13px;">
+                    ایمیل تست: admin@gstream.com | رمز: admin123
+                </p>
+                <p class="auth-toggle">
+                    حساب کاربری ندارید؟ <a href="#" onclick="showRegister()">ثبت‌نام کنید</a>
+                </p>
+            </div>
+
+            <div class="auth-box" id="registerBox" style="display:none;">
+                <h2>📝 ثبت‌نام در GStream</h2>
+                <form id="registerForm" onsubmit="handleRegister(event)">
+                    <div class="form-group">
+                        <label for="registerName">نام کامل</label>
+                        <input type="text" id="registerName" required placeholder="علی محمدی">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">ایمیل</label>
+                        <input type="email" id="registerEmail" required placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">رمز عبور</label>
+                        <input type="password" id="registerPassword" required placeholder="حداقل ۶ کاراکتر">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">ثبت‌نام</button>
+                </form>
+                <p class="auth-toggle">
+                    قبلاً ثبت‌نام کردید؟ <a href="#" onclick="showLogin()">ورود</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+    "app_name": "GStream",
+    "version": "1.0.0",
+    "max_upload_size": 524288000,
+    "allowed_video_formats": [
+        "mp4",
+        "mov",
+        "avi"
+    ],
+    "default_thumbnail": "https://via.placeholder.com/300x180/1a1a2e/e94560?text=GStream",
+    "api_endpoint": "api.php",
+    "videos_per_page": 20,
+    "enable_comments": true,
+    "enable_likes": true,
+    "theme": "dark"
+}

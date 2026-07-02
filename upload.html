@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آپلود ویدیو - GStream</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .mode-badge {
+            display: inline-block;
+            background: #00b894;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .info-box {
+            background: rgba(0, 184, 148, 0.1);
+            border: 1px solid #00b894;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            color: #ddd;
+            font-size: 14px;
+        }
+        .info-box strong { color: #00b894; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🎬 GStream <span class="mode-badge">🔋 بدون سرور</span></div>
+            <nav>
+                <a href="index.html">خانه</a>
+                <a href="upload.html" class="active">آپلود</a>
+                <a href="login.html">ورود</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="upload-container">
+            <h1>📤 آپلود ویدیو جدید</h1>
+
+            <div class="info-box">
+                <strong>💡 نکته:</strong> در این نسخه بدون سرور، ویدیوها به صورت base64 در LocalStorage مرورگر ذخیره می‌شوند. 
+                حجم محدود (~5MB) دارند و با پاک کردن کش مرورگر حذف می‌شوند.
+            </div>
+
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label for="title">عنوان ویدیو</label>
+                    <input type="text" id="title" name="title" required placeholder="عنوان ویدیو را وارد کنید">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">توضیحات</label>
+                    <textarea id="description" name="description" rows="4" placeholder="توضیحات ویدیو"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="videoFile">انتخاب فایل ویدیو</label>
+                    <input type="file" id="videoFile" name="videoFile" accept="video/*" required>
+                    <small>فرمت‌های مجاز: MP4, AVI, MOV - حداکثر ۵MB (محدودیت LocalStorage)</small>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg">آپلود ویدیو</button>
+            </form>
+
+            <div id="uploadProgress" class="progress-container" style="display:none;">
+                <div class="progress-bar" id="progressBar" style="width:0%"></div>
+                <span id="progressText">۰%</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 GStream - تمامی حقوق محفوظ است</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

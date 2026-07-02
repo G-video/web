@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 GStream - پلتفرم استریم</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .mode-badge {
+            display: inline-block;
+            background: #00b894;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .info-box {
+            background: rgba(0, 184, 148, 0.1);
+            border: 1px solid #00b894;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            color: #ddd;
+            font-size: 14px;
+        }
+        .info-box strong { color: #00b894; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🎬 GStream <span class="mode-badge">🔋 بدون سرور</span></div>
+            <nav>
+                <a href="index.html" class="active">خانه</a>
+                <a href="upload.html">آپلود</a>
+                <a href="login.html" id="authLink">ورود</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>به GStream خوش آمدید</h1>
+            <p>تماشا، آپلود و اشتراک‌گذاری ویدیوهای خود</p>
+            <a href="upload.html" class="btn btn-primary">آپلود ویدیو جدید</a>
+        </section>
+
+        <div class="info-box">
+            <strong>💡 نکته:</strong> این نسخه بدون نیاز به سرور PHP کار می‌کند. همه داده‌ها در حافظه مرورگر (LocalStorage) ذخیره می‌شوند.
+            برای ذخیره دائمی و اشتراک‌گذاری، باید روی هاست PHP آپلود شود.
+        </div>
+
+        <section class="videos-grid" id="videoGrid">
+            <div class="loading">در حال بارگذاری...</div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 GStream - تمامی حقوق محفوظ است</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', loadVideos);
+    </script>
+</body>
+</html>

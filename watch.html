@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پخش ویدیو - GStream</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🎬 GStream</div>
+            <nav>
+                <a href="index.html">خانه</a>
+                <a href="upload.html">آپلود</a>
+                <a href="login.html">ورود</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container watch-container">
+        <div class="video-player-wrapper">
+            <video id="videoPlayer" controls style="width:100%; max-height:600px; border-radius:15px; background:#000;">
+                <source id="videoSource" src="" type="video/mp4">
+                مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+            </video>
+            <div class="video-info" style="padding: 20px 0 0;">
+                <h2 id="videoTitle" style="font-size:24px; margin-bottom:5px; color:#fff;">عنوان ویدیو</h2>
+                <p id="videoDescription" style="color:#aaa; margin-bottom:10px;">توضیحات ویدیو</p>
+                <div class="video-meta" style="color:#666; font-size:14px; display:flex; gap:20px;">
+                    <span id="videoDate">📅 تاریخ نامشخص</span>
+                    <span id="videoViews">👁️ ۰ بازدید</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 GStream - تمامی حقوق محفوظ است</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoId = urlParams.get('id');
+        if (videoId) {
+            loadVideo(videoId);
+        } else {
+            document.querySelector('.watch-container').innerHTML = `
+                <div style="text-align:center; padding:60px 20px;">
+                    <div style="font-size:64px; margin-bottom:20px;">😕</div>
+                    <h2 style="color:#e94560;">ویدیویی انتخاب نشده</h2>
+                    <a href="index.html" class="btn btn-primary" style="margin-top:20px;">بازگشت به خانه</a>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
